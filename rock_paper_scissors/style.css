@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* font-family: "Gluten", cursive; */
+    /* font-weight: 700; */
+}
+.head{
+    font-family: "Black Ops One", sans-serif;  
+    text-align: center;
+    background-color: rgb(18, 178, 18);
+}
+.name{
+    font-size: 25px;
+}
+.rule{
+    font-weight: 100;
+}
+.score{
+    background-color: rgb(12, 12, 12);
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+}
+.score > div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.score > div > div{
+    width: 50px;
+    height: 50px;
+    /* border: 2px solid whitesmoke; */
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: inset 0px 0px 10px 5px rgb(33, 68, 157);
+}
+.score > div:first-child > div{
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.score > div:last-child > div{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.input{
+
+}
+.output{
+
+}
+.results{
+
+}

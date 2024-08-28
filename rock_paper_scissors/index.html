@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Gluten:wght@100..900&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: beige;">
-    <p style="color: maroon; font-size: larger;">Type <strong>game()</strong> in console to start a Game!!</p>
-    <script src="script.js"></script>
+
+<body>
+    <div class="head">
+        <p class="name">Rock, Paper, Scissors</p>
+        <p class="rule">First to 5 is the champion</p>
+    </div>
+
+    <div class="score">
+        <div>
+            <div class="myScore">3</div>
+            <p>You</p>
+        </div>
+        <div>
+            <p>Computer</p>
+            <div class="botScore">7</div>
+        </div>
+    </div>
+
+    <div class="input">
+        <p>Rock, paper or scissors?</p>
+        <div class="selectionBox">
+            <div class="button"></div>
+            <div class="button"></div>
+            <div class="button"></div>
+        </div>
+    </div>
+
+    <div class="output">
+        <p class="myChoiceText"></p>
+        <p class="botChoiceText"></p>
+        <div class="myChoiceImg"></div>
+        <div class="botChoiceImg"></div>
+        <p class="roundWinner"></p>
+    </div>
+
+    <div class="results">
+        <table>
+            <tr>
+                <th>Your Choice</th>
+                <th>Computer Choice</th>
+                <th>Winner</th>
+            </tr>
+        </table>
+    </div>
+
 </body>
+<script src="script.js"></script>
 </html>
