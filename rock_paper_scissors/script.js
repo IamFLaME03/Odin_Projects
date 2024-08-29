@@ -9,7 +9,8 @@ const roundWinner = document.querySelector(".roundWinner");
 const resultTable = document.querySelector(".resultTable");
 const winResult = document.querySelector(".winResult");
 const loseResult = document.querySelector(".loseResult");
-const playAgain = document.querySelector(".playAgain");
+const playAgain = document.querySelectorAll(".playAgain");
+const tr = document.querySelector('tr')
 
 let myScore = 0;
 let botScore = 0;
@@ -86,6 +87,7 @@ function showRoundWinner(winner) {
 function previousResultShow(hc, cc, w) {
   const tr = document.createElement("tr");
   tr.innerHTML = `<td>${hc}</td><td>${cc}</td><td>${w}</td>`;
+  tr.setAttribute("class", "row")
   resultTable.appendChild(tr);
 }
 
@@ -105,14 +107,22 @@ button.forEach(function (button) {
     previousResultShow(human_choice, computer_choice, winner);
   });
 });
+playAgain.forEach(function(playAgain){
+    playAgain.addEventListener("click", function (e) {
+        winResult.style.visibility = "hidden";
+        loseResult.style.visibility = "hidden";
+        myScore = 0;
+        botScore = 0;
+    myScoreEle.textContent = `${myScore}`;
+    botScoreEle.textContent = `${botScore}`;
+        human_choice;
+        computer_choice;
+        resultTable.innerHTML = ""
+        myChoiceText.innerHTML = ""
+        botChoiceText.innerHTML = ""
+        myChoiceImg.innerHTML = ""
+        botChoiceImg.innerHTML = ""
+        roundWinner.innerHTML = ""
+    })
+})
 
-playAgain.addEventListener("click", function (e) {
-  winResult.style.visibility = "hidden";
-  loseResult.style.visibility = "hidden";
-  myScore = 0;
-  botScore = 0;
-  human_choice;
-  computer_choice;
-
-
-});
