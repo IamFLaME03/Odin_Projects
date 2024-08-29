@@ -1,12 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: beige;">
-    <p style="color: maroon; font-size: larger;">Type <strong>game()</strong> in console to start a Game!!</p>
-    <script src="script.js"></script>
+
+<body>
+    <div class="head">
+        <p class="name">Rock, Paper, Scissors</p>
+        <p class="rule">First to 5 is the champion</p>
+    </div>
+    <div class="score">
+        <div>
+            <div class="myScore">0</div>
+            <p>You</p>
+        </div>
+        <div>
+            <p>Computer</p>
+            <div class="botScore">0</div>
+        </div>
+    </div>
+    <div class="input">
+        <p>Rock, paper or scissors?</p>
+        <div class="selectionBox">
+            <div id="Rock" class="button">Rock</div>
+            <div id="Paper" class="button">Paper</div>
+            <div id="Scissor" class="button">Scissors</div>
+        </div>
+    </div>
+    <div class="output">
+        <p class="myChoiceText"></p>
+        <p class="botChoiceText"></p>
+        <div class="myChoiceImg"></div>
+        <div class="botChoiceImg"></div>
+        <p class="roundWinner"></p>
+<p></p>
+    </div>
+    <div class="results">
+        <table>
+            <thead>
+            <tr>
+                <th>Your Choice</th>
+                <th>Computer Choice</th>
+                <th>Winner</th>
+            </tr>
+        </thead>
+        <tbody class="resultTable">
+
+        </tbody>
+        </table>
+    </div>
+    <div class="footer">
+        <div class="left">&copy; Copyright All Rights Reserved</div>
+        <div class="right">
+            <p>Designed by <a href="https://www.linkedin.com/in/kirtan-patel333/">Kirtan Patel</a>
+            </p>
+            <ul>
+                <li>
+                    <a target="_blank" href="https://www.linkedin.com/in/kirtan-patel333/"><img src="img/linkedin.png"
+                            alt="img" width="15px">LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://github.com/IamFLaME03"><img src="img/github.png" alt="img"
+                            width="15px">Github
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.instagram.com/_ky_patel_/"><img src="img/instagram.png"
+                            alt="img" width="15px">Instagram
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="winResult"><img src="img/win.png" alt="img">
+        <div class="playAgain">Play Again</div>
+    </div>
+    <div class="loseResult"><img src="img/lose.png" alt="img">
+        <div class="playAgain">Play Again</div>
+    </div>
 </body>
+<script src="script.js"></script>
+
 </html>
