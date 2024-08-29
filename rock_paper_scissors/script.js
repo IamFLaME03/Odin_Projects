@@ -27,8 +27,6 @@ function getComputerChoice() {
       return "Scissor";
   }
 }
-// botChoiceText.innerHTML = ;
-
 function showInput() {
   myChoiceText.innerHTML = "";
   botChoiceText.innerHTML = "";
@@ -50,34 +48,45 @@ function showInput() {
   botChoiceImg.replaceChildren(i2);
 }
 function findWinner(val1, val2) {
-    // rock > scissors
-    // scissors > paper
-    // paper > rock
-    if (val1 == val2) {
-      return "draw";
-    } else if (
-      (val1 == "Rock" && val2 == "Scissor") ||
-      (val1 == "Scissor" && val2 == "Paper") ||
-      (val1 == "Paper" && val2 == "Rock")
-    ) {
-      return val1;
-    } else {
-      return val2;
-    }
+  // rock > scissors
+  // scissors > paper
+  // paper > rock
+  if (val1 == val2) {
+    return "draw";
+  } else if (
+    (val1 == "Rock" && val2 == "Scissor") ||
+    (val1 == "Scissor" && val2 == "Paper") ||
+    (val1 == "Paper" && val2 == "Rock")
+  ) {
+    myScore++;
+    myScoreEle.textContent = `${myScore}`;
+    return "You";
+  } else {
+    botScore++;
+    botScoreEle.textContent = `${botScore}`;
+    return "Computer";
+  }
 }
-function showRoundWinner(winner){
-    if (winner === human_choice) {
+function showRoundWinner(winner) {
+  roundWinner.textContent = "";
+  if (winner === "You") {
+    roundWinner.textContent = "Hurrah! You Win the round";
+  } else if (winner === "Computer") {
+    roundWinner.textContent = "Oops! Computer Win the round!";
+  } else {
+    roundWinner.textContent = "Oh, Its Tie!";
+  }
 
-        console.log("Hurrah! You Win the round");
-        return "human";
-    } 
-    else if (winner === computer_choice) {
-        console.log("Oops! Computer the round!");
-        return "bot";
-    } 
-    else {
-        console.log("Oh, Its Tie!");
-    }
+  if (myScore == 5) {
+    winResult.style.visibility = "visible";
+  } else if (botScore == 5) {
+    loseResult.style.visibility = "visible";
+  }
+}
+function previousResultShow(hc, cc, w) {
+  const tr = document.createElement("tr");
+  tr.innerHTML = `<td>${hc}</td><td>${cc}</td><td>${w}</td>`;
+  resultTable.appendChild(tr);
 }
 
 //checks for click event and perform task
@@ -88,51 +97,22 @@ button.forEach(function (button) {
     computer_choice = getComputerChoice();
     console.log(`human : ${human_choice}  com : ${computer_choice}`);
     showInput();
-    let winner = findWinner(human_choice,computer_choice);
-    console.log(winner)
+    let winner = findWinner(human_choice, computer_choice);
+    console.log(winner);
+    console.log(myScore);
+    console.log(botScore);
     showRoundWinner(winner);
-
+    previousResultShow(human_choice, computer_choice, winner);
   });
 });
 
+playAgain.addEventListener("click", function (e) {
+  winResult.style.visibility = "hidden";
+  loseResult.style.visibility = "hidden";
+  myScore = 0;
+  botScore = 0;
+  human_choice;
+  computer_choice;
 
 
-function round() {
-  let human_choice = getHumanChoice();
-
-  let winner = findWinner(human_choice, computer_choice);
-  
-}
-function game() {
-  const rounds = Number(prompt("How many rounds you want to play"));
-  if (!rounds) {
-    console.log("Not started");
-  } else {
-    let human_wins = 0,
-      bot_wins = 0;
-    for (let i = 0; i < rounds; i++) {
-      console.log(`------Round - ${i + 1}------`);
-      const res = round();
-      if (res === "human") human_wins++;
-      else if (res === "bot") bot_wins++;
-
-      console.log(`Your Points : ${human_wins}`);
-      console.log(`Opponent Points : ${bot_wins}`);
-    }
-    if (human_wins > bot_wins) {
-      console.log(
-        `You are the Winner!!! with the lead of ${
-          human_wins - bot_wins
-        } points.`
-      );
-    } else if (human_wins == bot_wins) {
-      console.log(`Its draw`);
-    } else {
-      console.log(
-        `Opponent is the Winner!!! with the lead of ${
-          bot_wins - human_wins
-        } points.`
-      );
-    }
-  }
-}
+});
