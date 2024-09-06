@@ -3,9 +3,8 @@ const container = document.querySelector('.container')
 const gridBtn = document.querySelector('.gridView') 
 let box = document.querySelectorAll(".box")
 let colorSel = document.querySelector('#colorSel')
-colorSel.addEventListener('change', function (e) {
-    colorSel = e.target.value;
-})
+
+
 const eraserBtn = document.querySelector(".eraser")
 const keyDisplay = document.querySelector('.keyDisplay')
 
@@ -81,7 +80,7 @@ function createDiv(size) {
         box.style.height = `calc(600px / ${size})`;
     })
 }
-function colorChange(color) {
+function colorChange() {
         box.forEach(b => {
             b.addEventListener("mouseover", e => {
                 if(e.buttons === 1){ // if user holds click they can 'draw'
@@ -89,7 +88,7 @@ function colorChange(color) {
                         e.target.style.backgroundColor = "whitesmoke";
                     }
                     else{
-                        e.target.style.backgroundColor = color;
+                        e.target.style.backgroundColor = `${colorSel.value}`;   
                     }
                 }
             })
@@ -143,8 +142,8 @@ size.addEventListener('change', function (e) {
     if(verifySize(size)){
         createDiv(size);
     }
-    colorChange(colorSel);
+    colorChange();
 })
 
 createDiv(32);
-colorChange(colorSel.value);
+colorChange();
