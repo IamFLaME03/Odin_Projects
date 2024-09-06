@@ -26,7 +26,7 @@ main{
     background-color: rgb(15, 17, 88);
     height: 90vh;
     font-size: 18px;
-    color: aliceblue;
+    color: yellow;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,8 +35,8 @@ main{
     text-align: center;
 }
 .sidebar div{
+    padding: 5px 0px;
     width: 100%;
-    padding: 5px 0;
 }
 .sidebar div:hover{
     background-color: aliceblue;
@@ -53,6 +53,12 @@ main{
 }
 .eraser, .gridView{
     color: yellow;
+}
+.sidebar p{
+    padding: 5px;
+}
+.sidebar > p > span{
+    color: aliceblue;
 }
 .work-area{
     display: flex;

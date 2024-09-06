@@ -82,13 +82,15 @@ function createDiv(size) {
     })
 }
 function colorChange(color) {
-        box.forEach(function (b) {
-            b.addEventListener("mouseover", function (e) {
-                if(eraser == true){
-                    e.target.style.backgroundColor = "whitesmoke";
-                }
-                else{
-                    e.target.style.backgroundColor = color;
+        box.forEach(b => {
+            b.addEventListener("mouseover", e => {
+                if(e.buttons === 1){ // if user holds click they can 'draw'
+                    if(eraser == true){
+                        e.target.style.backgroundColor = "whitesmoke";
+                    }
+                    else{
+                        e.target.style.backgroundColor = color;
+                    }
                 }
             })
         })
@@ -135,7 +137,6 @@ window.addEventListener("keydown", function(e){
         viewKey(e.key)
     }
 })
-
 size.addEventListener('change', function (e) {
     let size = parseInt(e.target.value)
     
