@@ -18,10 +18,8 @@ eraserBtn.addEventListener("click", function (e) {
         eraserBtn.style.backgroundColor = "yellow";
         eraserBtn.style.color = "rgb(15, 17, 88)";
         eraserBtn.style.width = "110%";
-        eraserBtn.style.borderBottomRightRadius
-         = "10px";
-        eraserBtn.style.borderTopRightRadius
-        = "10px";
+        eraserBtn.style.borderBottomRightRadius = "10px";
+        eraserBtn.style.borderTopRightRadius = "10px";
     }
     else{
         eraser = false;
@@ -30,7 +28,8 @@ eraserBtn.addEventListener("click", function (e) {
         eraserBtn.style.width = "100%";
     }
 })
-gridBtn.addEventListener("click", function (e) {
+
+function gridShowandHide(){
     if(gridShow == false){
         gridShow = true;
         box.forEach(function(b){
@@ -40,10 +39,8 @@ gridBtn.addEventListener("click", function (e) {
         gridBtn.style.backgroundColor = "yellow";
         gridBtn.style.color = "rgb(15, 17, 88)";
         gridBtn.style.width = "110%";
-        gridBtn.style.borderBottomRightRadius
-         = "10px";
-         gridBtn.style.borderTopRightRadius
-        = "10px";
+        gridBtn.style.borderBottomRightRadius = "10px";
+        gridBtn.style.borderTopRightRadius = "10px";
     }
     else{
         gridShow = false;
@@ -55,8 +52,7 @@ gridBtn.addEventListener("click", function (e) {
         gridBtn.style.color = "yellow";
         gridBtn.style.width = "100%";
     }
-})
-
+}
 function verifySize(size){
     if (size <= 0) {
         alert("Size must be between 1 to 150.")
@@ -82,6 +78,14 @@ function createDiv(size) {
 }
 function colorChange() {
         box.forEach(b => {
+            b.addEventListener('click', e => {
+                if(eraser == true){
+                    e.target.style.backgroundColor = "whitesmoke";
+                }
+                else{
+                    e.target.style.backgroundColor = `${colorSel.value}`;   
+                }
+            })
             b.addEventListener("mouseover", e => {
                 if(e.buttons === 1){ // if user holds click they can 'draw'
                     if(eraser == true){
@@ -98,10 +102,11 @@ function viewKey(key){
     keyDisplay.innerHTML = `${key}`
     keyDisplay.style.visibility  = 'visible' 
     setTimeout(function(){
-        console.log("hell");
-    keyDisplay.style.visibility  = 'hidden' 
+        keyDisplay.style.visibility  = 'hidden' 
     },500)
 }
+
+gridBtn.addEventListener("click", gridShowandHide)
 //for just type a number and get grid without click on size input box
 window.addEventListener("keydown", function(e){
     //48-57  - Numbers
@@ -110,7 +115,6 @@ window.addEventListener("keydown", function(e){
     console.log(e.key);
 
     if(e.keyCode>=48 && e.keyCode<=57){
-        console.log(typeof num);
         if(num<100){
             num = (num*10 )+ Number(e.key);
         }
@@ -131,7 +135,7 @@ window.addEventListener("keydown", function(e){
         if(verifySize(num)){
             createDiv(size.value);
         }
-        colorChange(colorSel);
+        colorChange();
         num = 0;
         viewKey(e.key)
     }
@@ -142,8 +146,6 @@ size.addEventListener('change', function (e) {
     if(verifySize(size)){
         createDiv(size);
     }
-    colorChange();
 })
-
 createDiv(32);
 colorChange();
