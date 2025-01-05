@@ -10,7 +10,7 @@ const keyDisplay = document.querySelector('.keyDisplay')
 
 let eraser = false;
 let num = 0;
-let gridShow = false;
+let gridShow = true;
 
 eraserBtn.addEventListener("click", function (e) {
     if(eraser == false){
