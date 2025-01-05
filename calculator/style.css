@@ -25,6 +25,7 @@ body{
     position: relative;
     border: 1px rgba(255, 255, 255, 0.5) solid;
     box-shadow: inset 0px 0px 10px 3px;
+    overflow: scroll;
 }
 .answer{
     color: whitesmoke;
