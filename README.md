@@ -17,4 +17,7 @@ This game will be played entirely in the console.
 The familiar game of Rock, Paper, Scissors is played like this: at the same time, two players display one of three symbols: a rock, paper, or scissors. A rock beats scissors, scissors beat paper by cutting it, and paper beats rock by covering it.
 
 ## 4. [Etch_A_Sketch 🖍️: Let's Draw Something](https://iamflame03.github.io/Odin_Projects/etch-a-sketch/index.html)
-This is a browser version of something between a sketchpad and an Etch-A-Sketch.
+A browser version of something between a sketchpad and an Etch-A-Sketch.
+
+## 5. [Calculator🔢](https://iamflame03.github.io/Odin_Projects/calculator/index.html)
+A user-friendly and responsive calculator website for performing basic arithmetic operations with a sleek design and seamless functionality.
