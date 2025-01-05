@@ -1,56 +1,25 @@
 const ans = document.querySelector('.answer')
 const buttons = document.querySelectorAll('.buttons>div')
 const number = document.querySelectorAll('.num')
-const ac = document.getElementById('ac');
-const sign = document.getElementById('sign');
-const mod = document.getElementById('mod');
-const divi = document.getElementById('divi');
-const mul = document.getElementById('mul');
-const sub = document.getElementById('sub');
-const add = document.getElementById('add');
-const equal = document.getElementById('equal');
-const nine = document.getElementById('nine');
-const eight = document.getElementById('eight');
-const seven = document.getElementById('seven');
-const six = document.getElementById('six');
-const five = document.getElementById('five');
-const four = document.getElementById('four');
-const three = document.getElementById('three');
-const two = document.getElementById('two');
-const one = document.getElementById('one');
-const dot = document.getElementById('dot');
-const zero = document.getElementById('zero');
+const zero = document.getElementById('zero')
+const sub = document.getElementById('sub')
+const mul = document.getElementById('mul')
+const divi = document.getElementById('divi')
+const mod = document.getElementById('mod')
+const add = document.getElementById('add')
 
-let first_var = null, opr = '', second_var = null;
-let result = 0, temp='';
+let first_var = opr = second_var = '';
+let result = temp = '0'; 
+console.log(sub, mul, divi, mod, add);
 
-buttons.forEach((b) => {
-    b.addEventListener('click', (e) => {
-        if(e.target.className == 'num'){
-            handleNum(e.target);
-            console.log(temp);
-        }
-        else if(e.target.id == 'dot'){
-            handleDot();
-            console.log(temp);
-        }
-        else if(e.target.id == 'sign'){
-            handleSign();
-        }
-        else if(e.target.id == 'ac'){
-            handleAC(e.target);
-        }
-        else if(e.target.id == 'equal'){
-            handleEqual(e.target);
-        }
-        else{
-            handleOperator(e.target);
-        }
-    })
-})
 
 function handleNum(key){
-    if(key.id == 'zero'){
+    if(ans.innerHTML == 0){
+        ans.innerHTML = '';
+        temp = '';
+    }
+
+    if(key.innerHTML == '0'){
         if(temp != '0' && temp != '') {
             temp = `${temp}` + key.innerHTML;
         }
@@ -58,9 +27,7 @@ function handleNum(key){
     else{
         temp = `${temp}` + key.innerHTML;
     }
-    if(ans.innerHTML == '0'){
-        ans.innerHTML = '';
-    }
+
     ans.innerHTML = ans.innerHTML + key.innerHTML;
 }
 function handleDot(){
@@ -74,15 +41,12 @@ function handleSign(){
         if(temp[0] == '-'){
             let i = ans.innerHTML.slice(0, ans.innerHTML.length-temp.length-2)
             i = i + (-temp) 
-            console.log(i)
             temp = temp.slice(1,temp.length)
             ans.innerHTML = i
-
         }
         else{
             let i = ans.innerHTML.slice(0, ans.innerHTML.length-temp.length)
             i = i + '(' + (-temp) + ')'
-            console.log(i)
             temp = '-' + temp
             ans.innerHTML = i
         }
@@ -116,26 +80,135 @@ function handleSign(){
         }
 }
 function handleOperator(key){
-
     if(opr == ''){
-        opr=key.innerHTML;
         first_var = temp;
         temp = '';
-        ans.innerHTML = ans.innerHTML + key.innerHTML;
+        opr = key;
+        ans.innerHTML = ans.innerHTML + key;
     }
+    else if(first_var && opr && temp == ''){
+            ans.innerHTML = ans.innerHTML.slice(0, -1) + key;
+            opr=key;
+    }
+}
+function handleAC(){
+    temp=''
+    ans.innerHTML = '0'
+    first_var = null
+    opr = ''
+    second_var = null
+    result=0
+}
+function handleEqual(){
+    second_var=temp
+    if(second_var == ''){
+        result=first_var;
+    }    
     else{
-        if(key.innerHTML != opr){
-            console.log('opr : ', opr,'temp : ' , temp);
+        result = (function(){ 
+            return new Function('return ' +first_var + opr + second_var)()})();
+        result = parseFloat(result.toFixed(3)); 
+    }
+    ans.innerHTML = temp = result;
+}
+function restart(){
+    opr = first_var = second_var = '';
+    temp = '0';
+    ans.innerHTML = '0'
+}
+buttons.forEach((b) => {
+    b.addEventListener('click', (e) => {
+        if(second_var) restart();
+        if(e.target.className == 'num'){
+            handleNum(e.target);
+            console.log(temp);
+        }
+        else if(e.target.id == 'dot'){
+            handleDot();
+            console.log(temp);
+        }
+        else if(e.target.id == 'sign'){
+            handleSign();
+        }
+        else if(e.target.id == 'ac'){
+            handleAC();
+        }
+        else if(e.target.id == 'equal'){
+            handleEqual();
+        }
+        else{
+            handleOperator(e.target.innerHTML);
+        }
+        console.log('first_var :', first_var, 'opr : ', opr, 'second_var :', second_var);
+        
+    })
+})
+window.addEventListener("keydown", function(e){
+    //48-57  - Numbers
+    //8 - Backspace
+    //13 - Enter
+    // console.log(e.key);
+    if(second_var)  restart();
 
-            ans.innerHTML.replace(opr, key.innerHTML);
-
-            console.log('opr : ', opr,'temp : ' , temp);
-            opr=key.innerHTML;
-            console.log('opr : ', opr,'temp : ' , temp);
-            
+    if(e.shiftKey){
+        if(e.key === '%'){          //shift + '5'
+            handleOperator(e.key);
+        }
+        else if( e.key === '*'){          //shift + '8'
+            handleOperator('*');
+        }
+        else if( e.key === '+'){          //shift + '='
+            handleOperator('+');
         }
     }
-
-}
-// function handleDot(key){}
-// function handleDot(key){}
+    else if(e.key>='1' && e.key<='9'){    //number
+        if(ans.innerHTML == '0'){
+            ans.innerHTML = '';
+            temp = '';
+        }
+        ans.innerHTML = ans.innerHTML + e.key; 
+        temp = `${temp}` + e.key;
+    }
+    else if(e.key == '0'){                      //zero
+        if(ans.innerHTML == '0'){
+            ans.innerHTML = '';
+            temp = '0';
+        }
+        else {
+            temp = `${temp}` + '0';
+        }
+        ans.innerHTML = ans.innerHTML + e.key;
+    }
+    else if(e.key == 's' || e.key == 'S'){      // Sign change '+/-'
+        handleSign();
+    }
+    else if(e.key == '.'){      // '.'
+        handleDot();
+    }
+    else if(e.key == '-'){      // '-'
+        handleOperator('-');
+    }
+    else if(e.key == '/'){      // '/'
+        handleOperator('/');
+    }
+    else if(e.key === 'Enter' || e.key == '='){
+        handleEqual();
+    }
+    else if(e.key === 'Backspace'){
+        if(first_var && opr && temp){
+            temp = temp.slice(0, -1);
+        }
+        else if(first_var && opr){
+            opr=''
+        }
+        else if(first_var){
+            first_var = first_var.slice(0, -1)
+        }
+        else if(temp){
+            temp = temp.slice(0, -1)
+        }
+        ans.innerHTML = ans.innerHTML.slice(0, -1);
+    }
+    console.log('temp : ', temp);
+    console.log('first_var :', first_var, 'opr : ', opr, 'second_var :', second_var);
+})
