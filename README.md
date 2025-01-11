@@ -21,3 +21,6 @@ A browser version of something between a sketchpad and an Etch-A-Sketch.
 
 ## 5. [Calculator🔢](https://iamflame03.github.io/Odin_Projects/calculator/index.html)
 A user-friendly and responsive calculator website for performing basic arithmetic operations with a sleek design and seamless functionality.
+
+## 6. [Signup Form 📝](https://iamflame03.github.io/Odin_Projects/signup-form/index.html)
+A stylish and interactive sign-up form web page featuring form validation, a modern layout, and a focus on user experience.
