@@ -1,0 +1,150 @@
+@font-face {
+    font-family: norseBold;
+    src: url(Norse-Bold.otf);
+    font-weight: bold;
+}
+*{
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    background: darkgray;
+    display: flex;
+}
+.left{
+    width: 30vw;
+    background: cadetblue;
+    background: url(bg-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hero{
+    height: 20vh;
+    width: 100%;
+    margin-top: 20vh;
+    background: #0000007d;
+    color: aliceblue;
+    font-size: 60px;
+    font-family: norseBold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero > img{
+    height: 18vh;
+}
+.hero h1{
+    margin-top: 4vh;
+}
+.img-credits{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 10px;
+}
+a{
+    color: rgb(255, 255, 255);
+}
+
+.right{
+    width: 70vw;
+    background: rgba(255, 255, 255, 0.552);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family:sans-serif;
+}
+.right>p:nth-of-type(1){
+    font-size: 20px;
+    padding: 0 15vw 0 5vw;
+}
+.right>p:nth-of-type(1) > span{
+    font-style: italic;
+}
+.right>p:nth-of-type(2){
+    font-size: 20px;
+    padding: 4vh 15vw 4vh 5vw;
+}
+.right>:nth-of-type(3){
+    background: whitesmoke;
+    font-size: 21px;
+    font-weight: bold;
+    padding: 3vh 15vw 3vh 5vw;
+}
+.flex-container{
+    background: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    padding:0 10vw 2vh 0;
+    row-gap: 15px;
+    column-count: 2;
+}
+.flex-container > div{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5vw;
+    width: 18vw;
+}
+
+label{
+    color: #5c5c5c;
+    font-size: 15px;
+}
+input{
+    padding: 3px;
+    width: 15vw;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+input:focus { 
+    box-shadow: 0 0 8px 0 yellow;
+}
+input:user-valid{
+    border: 2px solid blue;
+}
+input:user-valid + label::before{
+    contain: "das";
+}
+input + .indicator{
+    position: relative;
+}
+input + .indicator::before{
+    position: absolute;
+    top: -6.3vh;
+    right: 2vw;
+}
+input:user-valid + span::before {
+    content: "✓";
+    color: green;
+}
+input:user-invalid{
+    border: 2px solid red;
+}
+form > button{
+    margin:4vh 5vw;
+    padding: 1vh 4vw;
+    background:green;
+    color: aliceblue;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor:copy;
+}
+form > button:hover{
+    background-color: whitesmoke;
+    color: green;
+}
+.right>:nth-of-type(4){
+    padding-left: 5vw;
+}
+.right>:nth-of-type(4) > a{
+    color: green;
+    text-decoration: none;
+    font-weight: bold;
+} 

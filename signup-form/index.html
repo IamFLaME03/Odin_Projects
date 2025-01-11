@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="hero">
+                <img src="odin-lined.png" alt="odin-lined">
+                <h1 class="odin">Odin</h1>
+            </div>
+            <p class="img-credits">
+                Photo by <a href="https://unsplash.com/@quentin?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">quentin</a> on <a href="https://unsplash.com/photos/road-between-yellow-leaf-trees-at-daytime-zwzeorQPepo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+            </p>
+        </div>
+        <div class="right">
+            <p>
+                This is not a real online service! You know you need something
+                like this in your life to help you realize your deepest dreams.
+                Sign up <span>now</span> to get started.
+            </p>
+            <p>You know you want to.</p>
+            <p>Let's do This!</p>
+            <form action="">
+                <div class="flex-container">
+                    <div>
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="firstname" id="firstname" required>
+                        <span class="indicator"></span>
+                    </div>
+                    <div>
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" id="lastname" required>
+                        <span class="indicator"></span>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required>
+                        <span class="indicator"></span>
+                    </div>
+                    <div>
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="number" name="phoneNumber" id="phoneNumber" min="1000000000" max="9999999999" required>
+                        <span class="indicator"></span>
+                    </div>
+                    <div>
+                        <label for="pass">Password</label>
+                        <input type="password" name="password" id="pass" required>
+                        <span class="indicator"></span>
+                    </div>
+                    <div>
+                        <label for="confirm_pass">Confirm Password</label>
+                        <input type="password" name="confirm_password" id="confirm_pass" required>
+                        <span class="indicator"></span>
+                    </div>
+                </div>
+                <button type="submit">Create Account</button>
+            </form>
+            <p>
+                Already have an account?
+                <a href="#">Log in</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
