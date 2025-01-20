@@ -28,3 +28,5 @@ A stylish and interactive sign-up form web page featuring form validation, a mod
 ## 7. [Responsive Dashboard 📊](https://iamflame03.github.io/Odin_Projects/dashboard/index.html) 
 A modern, fully responsive dashboard design showcasing clean UI principles, built using CSS Grid and Flexbox for optimal layout adaptability. 
 
+## 8. [Library 📚](https://iamflame03.github.io/Odin_Projects/library/index.html)
+A dynamic library application to manage and organize books, featuring JavaScript-based interactivity and a clean, user-friendly design.
