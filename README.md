@@ -24,3 +24,7 @@ A user-friendly and responsive calculator website for performing basic arithmeti
 
 ## 6. [Signup Form 📝](https://iamflame03.github.io/Odin_Projects/signup-form/index.html)
 A stylish and interactive sign-up form web page featuring form validation, a modern layout, and a focus on user experience.
+
+## 7. [Responsive Dashboard 📊](https://iamflame03.github.io/Odin_Projects/dashboard/index.html) 
+A modern, fully responsive dashboard design showcasing clean UI principles, built using CSS Grid and Flexbox for optimal layout adaptability. 
+

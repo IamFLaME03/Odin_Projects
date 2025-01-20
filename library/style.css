@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    font-family: "Roboto", serif;
+}
+body{
+    background-color: #d9b6e7;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #5c0d7d;
+    position: sticky;
+    top:0;
+    z-index: 1000;
+}
+nav h1 {
+    color: whitesmoke;
+    letter-spacing: 1px;
+    font-size: 32px;
+}
+.addBookBtn{
+    margin-right: 20px ;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgb(104, 198, 9);
+    font-size: 16px;
+    font-weight: 500;
+}
+.addBookBtn:hover{
+    background-color: rgb(152, 254, 50);
+    box-shadow: 0 0 5px 0 rgb(105, 105, 105);
+    font-weight: bold;
+    cursor:copy;
+}
+.container{
+    padding: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.card{
+    width: 220px;
+    height: 360px;
+    padding: 8px;
+    background-color: rgb(236, 225, 250);
+    overflow-y: scroll;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 0 5px 0 rgb(105, 105, 105);
+}
+.bookDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.bookImg{
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+}
+.bookName{
+    font-size: 16px;
+    font-weight: bold;
+    color: #5c0d7d;
+}
+.bookName:hover, .bookImg:hover{
+    cursor: pointer;
+}
+.bookDetails td{
+    padding: 0px 8px;
+    font-size: 14px;
+}
+.bookDetails tr td:nth-child(1){
+    color: rgb(88, 88, 88);
+    font-weight: bold;
+}
+.bookDetails tr td:nth-child(2){
+    color: rgb(93, 93, 93);
+}
+.readBtn, .notReadBtn{
+    font-size: 12px;
+    color: whitesmoke;
+    padding: 8px 28px;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 12px;
+}
+.readBtn{
+    background-color: #5c0d7d;
+}
+.notReadBtn{
+    background-color: #5b0d7da4;
+}
+.readBtn:hover, .notReadBtn:hover{
+    font-weight: 900;
+    box-shadow: 0 0 5px 0 rgb(112, 112, 112);
+    cursor: pointer;
+}
+
+
+form{
+    display: none;
+    width: fit-content;
+    background-color: #5b0d7def;
+    padding: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 12px;
+}
+.formTitle{
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 12px;
+}
+.inputTable{
+    border-collapse: separate; 
+    border-spacing: 10px; 
+}
+.inputTable td:nth-child(1){
+    width: 40%;
+    text-align: center;
+}
+.inputTable td:nth-child(2){
+    width: 60%;
+}
+.inputTable td{
+    color: aliceblue;
+}
+.readLabel{
+    font-size: 14px;
+}
+input{
+    padding: 8px;
+    cursor: pointer;
+}
+#inputImg > file-upload-button{
+    border: 2px solid lime;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+#inputLanguage{
+    padding: 4px 16px;
+}
+#inputPages{
+    padding: 4px;
+}
+.submitBox{
+    display: flex;
+    justify-content: center;
+}
+.submitBtn{
+    margin: 10px;
+    padding: 8px 28px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgb(104, 198, 9);
+    font-size: 16px;
+    font-weight: 500;
+}
+.submitBtn:hover{
+    background-color: rgb(152, 254, 50);
+    box-shadow: 0 0 5px 0 rgb(121, 121, 121);
+    font-weight: bold;
+    cursor:copy;
+}
