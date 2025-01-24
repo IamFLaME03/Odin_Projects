@@ -10,15 +10,24 @@ const inputImg = document.getElementById('inputImg')
 const inputLanguage = document.getElementById('inputLanguage');
 const radio = document.getElementsByName('readStatus');
 
-
-function Book(imageSrc, name, Author, language, pages, readStatus){
-    this.imageSrc = imageSrc;
-    this.name = name;
-    this.Author = Author;
-    this.language = language;
-    this.pages = pages;
-    this.readStatus = readStatus;
+class Book{
+    constructor(imageSrc, name, Author, language, pages, readStatus) {
+        this.imageSrc = imageSrc;
+        this.name = name;
+        this.Author = Author;
+        this.language = language;
+        this.pages = pages;
+        this.readStatus = readStatus;
+    }
 }
+// function Book(imageSrc, name, Author, language, pages, readStatus){
+//     this.imageSrc = imageSrc;
+//     this.name = name;
+//     this.Author = Author;
+//     this.language = language;
+//     this.pages = pages;
+//     this.readStatus = readStatus;
+// }
 
 let myLibrary = [];
 
@@ -50,9 +59,6 @@ function addBooktoLibrary(){
         const reader = new FileReader();
         reader.onload = function(e){    
             src = e.target.result;
-            console.log(inputAuthor.value);
-            console.log(inputPages.value);
-            
             let newBook = new Book(src, inputName.value, inputAuthor.value, language, inputPages.value, readStatusInput);
             myLibrary.push(newBook);
 
@@ -82,7 +88,6 @@ function resetFields(){
     })
 }
 function  displayBooks(){
-    // myLibrary.push(new Book('img/bhagat-singh.jpg', 'why i am...', 'Bhagat singh', 'english', 120, 'Already Read'))
     let  i = myLibrary[myLibrary.length - 1];
     let card = document.createElement('div');
     card.setAttribute('class',  'card');
@@ -92,7 +97,6 @@ function  displayBooks(){
     }else{
         temp= 'notReadBtn';
     }
-
     card.innerHTML = `
         <img src="${i.imageSrc}" alt="" class="bookImg">
         <div class="bookDetails">
