@@ -30,3 +30,6 @@ A modern, fully responsive dashboard design showcasing clean UI principles, buil
 
 ## 8. [Library 📚](https://iamflame03.github.io/Odin_Projects/library/index.html)
 A dynamic library application to manage and organize books, featuring JavaScript-based interactivity and a clean, user-friendly design.
+
+
+## 9. [Tic-Tac-Toe ⭕️❌⭕️](https://iamflame03.github.io/Odin_Projects/tic-tac-toe/index.html)
