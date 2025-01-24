@@ -83,7 +83,7 @@ function Game(){
             }
             checkWinner();
             if(--remainBox == 0 && roundOver==false){
-                showMsg('This round is Draw');
+                showMsg('Its Tie!!');
                 roundOver = true;
             }
         }

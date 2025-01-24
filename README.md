@@ -11,7 +11,6 @@ landing page created according to : <br>
 <br>
 [Colors and fonts info](https://cdn.statically.io/gh/TheOdinProject/curriculum/81a5d553f4073e593d23a6ab00d50eef8620796d/foundations/html_css/project/imgs/02.png)
 
-
 ## 3. [ Let's Play🥇 : rock_paper_scissors](https://iamflame03.github.io/Odin_Projects/rock_paper_scissors/index.html)
 This game will be played entirely in the console.
 The familiar game of Rock, Paper, Scissors is played like this: at the same time, two players display one of three symbols: a rock, paper, or scissors. A rock beats scissors, scissors beat paper by cutting it, and paper beats rock by covering it.
@@ -31,5 +30,5 @@ A modern, fully responsive dashboard design showcasing clean UI principles, buil
 ## 8. [Library 📚](https://iamflame03.github.io/Odin_Projects/library/index.html)
 A dynamic library application to manage and organize books, featuring JavaScript-based interactivity and a clean, user-friendly design.
 
-
 ## 9. [Tic-Tac-Toe ⭕️❌⭕️](https://iamflame03.github.io/Odin_Projects/tic-tac-toe/index.html)
+An interactive and responsive implementation of the classic Tic Tac Toe game, developed with modular JavaScript, HTML, and CSS.
