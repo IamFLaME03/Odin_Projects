@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', 'Open Sans', sans-serif;
+}
+
+body {
+    background-image: url('./img/bg.jpg');
+    background-color: #040411;
+}
+
+:root {
+    --white: #F5F5F5;
+    --orange: #ee910e;
+    --darkGray: #373330;
+    --black: #040411;
+    --yellow: #ffdc2b;
+    --blue: #0eccf2;
+}
+
+header{
+    margin: 0.2rem;
+    padding: 12px 24px;
+    background-color: var(--darkGray);
+    color: var(--yellow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+}
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:Verdana, 'Roboto Slab', sans-serif;
+}
+.logoImg{
+    object-fit:contain;
+    height: 64px;
+    cursor: pointer;
+}
+
+.four{
+    color: var(--blue);
+}
+nav{
+    display: flex;
+    gap: 4px;
+}
+nav button{
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 2px;
+    color: #373330;
+    background-color: #fefcfb5b;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 0 0 2px #fefcfbe4;
+}
+nav button:first-child{
+    border-radius: 12px 0 0 12px;
+}
+nav button:last-child{
+    border-radius: 0 12px 12px 0;
+}
+nav button:first-child:hover{
+    transform: translateX(-10px);
+}
+nav button:nth-child(2):hover{
+    transform: scale(1.1);
+}
+nav button:last-child:hover{
+    transform: translateX(10px);
+}
+button.active, nav button:hover{
+    background-color: #fefcfbe4;
+}
+
+.container{
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 450px) {
+    header{
+        margin: 0.2rem;
+    }
+    .heading{
+        letter-spacing: 1px;
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 750px) {
+    header{
+        flex-direction: column;
+        justify-content: center;
+    }
+    nav{
+        padding-top: 16px;
+    }
+}
+
+/* -------footer------- */
+footer {
+    color: var(--white);
+    background-color: var(--darkGray);
+    padding: 7px;
+    position: fixed;
+    bottom: 0;
+    font-size: 10px;
+    width: 100%;
+    text-align: center;
+}
+footer>a {
+    color: var(--yellow);
+}

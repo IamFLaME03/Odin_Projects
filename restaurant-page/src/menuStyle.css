@@ -1,0 +1,58 @@
+/* -----menu------ */
+#menu-container{
+    max-width: 600px;
+}
+.dropdown-btn {
+    color: var(--yellow);
+    background: var(--darkGray);
+    margin: 7px 0px;
+    padding: 5px 15px;
+    font-size: 15px;
+    display: block;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    text-align: left;
+}
+.fa-solid {
+    float: right;
+    padding-right: 8px;
+    visibility: visible;
+}
+.active {
+    background-color: var(--yellow);
+    color: var(--darkGray);
+    font-weight: bolder;
+}
+.dropdown-container {
+    display: none;
+    font-size: 14px;
+    margin: 0px 2px;
+}
+.category{
+    padding: 5px 10px;
+    color: var(--white);
+    background-color: var(--darkGray);
+    border-radius: 5px;
+    margin: 5px 0px;
+}
+.item{
+    padding: 5px 15px;
+    background-color: var(--black);
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.name{
+    color: var(--orange);
+    max-width: 320px;
+}
+strong{
+    color: var(--white);
+}
+.price{
+    color: var(--yellow);
+}
+.water > .name{
+    color: var(--blue);
+}

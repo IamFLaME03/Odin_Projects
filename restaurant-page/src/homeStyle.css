@@ -1,0 +1,46 @@
+/* -------home------ */
+#home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.banner{
+    height: 20%;
+    margin: 16px;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    text-align: center;
+}
+#home-container .banner:nth-child(2),#home-container .banner:nth-child(4){
+    flex-direction: row-reverse;
+}
+.banner > img{
+    width: 60vmin;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0px #1099b5;
+}
+.banner > p{
+    font-size: 32px;
+    color: var(--white);
+    font-style: italic;
+}
+.momosSpan, .pizzaSpan, .mottoSpan, .triangleSpan{
+    color: var(--blue);
+}
+.quoteSpan{
+    color: var(--yellow);
+}
+
+@media screen and (max-width: 550px) {
+    .banner{
+        gap:4vh;
+        flex-direction: column;
+    }
+    #home-container .banner:nth-child(2),#home-container .banner:nth-child(4){
+        flex-direction: column;
+    }
+}
