@@ -1,6 +1,9 @@
-const container = document.querySelector('.container')
+const body = document.querySelector('body')
+
 const menuContainer = document.createElement('div')
+const flexContainer = document.createElement('div')
 menuContainer.setAttribute('id', 'menu-container')
+flexContainer.setAttribute('class', 'flex-container')
 
 const menu = [
     {//steam momo
@@ -453,6 +456,7 @@ const menu = [
         ]
     },
 ]
+
 for(let s of menu){     //sections loop
     // console.log(s);
     const section = document.createElement('div')
@@ -488,10 +492,12 @@ for(let s of menu){     //sections loop
     section.appendChild(btn);
     section.appendChild(dropdownContainer);
 
-    menuContainer.appendChild(section)
+    flexContainer.appendChild(section)
 }
-// console.log(menuContainer);
-container.appendChild(menuContainer)
+console.log(menuContainer);
+menuContainer.appendChild(flexContainer)
+body.appendChild(menuContainer)
+menuContainer.style.display = 'none'
 
 const showMenuContainer = () => {
     menuContainer.style.display = 'block'
@@ -507,14 +513,20 @@ const menuToggleFunction = function (){
         i.addEventListener("click", function (e) {
             i.classList.toggle("active");
             const dropdownContent = i.nextElementSibling;
-            
-            if(dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-                e.target.innerHTML = `${e.target.id} <i class="fa-solid fa-chevron-down"></i>`
-            } else{
-                dropdownContent.style.display = "block";
-                e.target.innerHTML = `${e.target.id} <i class="fa-solid fa-chevron-up"></i>`
-            }
+            let box;
+                if(e.target.classList[0] === 'fa-solid'){
+                    box = e.target.parentElement;
+                }else{
+                    box  = e.target;
+                }
+                
+                if(dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                    box.innerHTML = `${box.id} <i class="fa-solid fa-chevron-down"></i>`
+                } else{
+                    dropdownContent.style.display = "block";
+                    box.innerHTML = `${box.id} <i class="fa-solid fa-chevron-up"></i>`
+                }
         });
     })
 }

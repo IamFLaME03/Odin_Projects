@@ -1,8 +1,14 @@
 /* -----menu------ */
-#menu-container{
-    max-width: 600px;
+
+.flex-container > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
 }
 .dropdown-btn {
+    width: 100%;
+    max-width: 700px;
     color: var(--yellow);
     background: var(--darkGray);
     margin: 7px 0px;
@@ -11,7 +17,6 @@
     display: block;
     border: none;
     border-radius: 5px;
-    width: 100%;
     text-align: left;
 }
 .fa-solid {
@@ -29,13 +34,6 @@
     font-size: 14px;
     margin: 0px 2px;
 }
-.category{
-    padding: 5px 10px;
-    color: var(--white);
-    background-color: var(--darkGray);
-    border-radius: 5px;
-    margin: 5px 0px;
-}
 .item{
     padding: 5px 15px;
     background-color: var(--black);
@@ -52,7 +50,4 @@ strong{
 }
 .price{
     color: var(--yellow);
-}
-.water > .name{
-    color: var(--blue);
 }

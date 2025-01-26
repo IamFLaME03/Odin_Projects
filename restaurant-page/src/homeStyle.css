@@ -19,7 +19,7 @@
     flex-direction: row-reverse;
 }
 .banner > img{
-    width: 60vmin;
+    width: 56vmin;
     border-radius: 20px;
     box-shadow: 0 0 20px 0px #1099b5;
 }
@@ -42,5 +42,8 @@
     }
     #home-container .banner:nth-child(2),#home-container .banner:nth-child(4){
         flex-direction: column;
+    }
+    .banner > p{
+        font-size: 26px;
     }
 }

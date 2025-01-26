@@ -32,3 +32,5 @@ A dynamic library application to manage and organize books, featuring JavaScript
 
 ## 9. [Tic-Tac-Toe ⭕️❌⭕️](https://iamflame03.github.io/Odin_Projects/tic-tac-toe/index.html)
 An interactive and responsive implementation of the classic Tic Tac Toe game, developed with modular JavaScript, HTML, and CSS.
+
+## 10. [Restaurant-page](https://iamflame03.github.io/Odin_Projects/)

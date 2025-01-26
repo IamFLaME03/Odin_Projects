@@ -3,10 +3,9 @@ import momos from './img/momos.png'
 import pizza from './img/pizza.png'
 import pizza2 from './img/pizza2.png'
 
-const container = document.querySelector('.container')
+const body = document.querySelector('body')
 const homeContainer = document.createElement('div');
 homeContainer.setAttribute('id', 'home-container');
-console.log(container);
 
 
 const banner = [
@@ -41,7 +40,7 @@ for(let i=0;i<4;i++){
     bannerEle.appendChild(p);
     homeContainer.appendChild(bannerEle);
 }
-container.appendChild(homeContainer);
+body.appendChild(homeContainer);
 
 const hideHomeContainer = function(){
     homeContainer.style.display ='none';

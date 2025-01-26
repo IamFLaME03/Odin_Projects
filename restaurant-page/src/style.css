@@ -7,6 +7,7 @@
 body {
     background-image: url('./img/bg.jpg');
     background-color: #040411;
+    margin-bottom: 50px;
 }
 
 :root {
@@ -83,9 +84,6 @@ button.active, nav button:hover{
     background-color: #fefcfbe4;
 }
 
-.container{
-    margin-bottom: 50px;
-}
 
 @media only screen and (max-width: 450px) {
     header{
