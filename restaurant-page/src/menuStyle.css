@@ -1,8 +1,12 @@
 /* -----menu------ */
+.flex-container{
+    margin: 0 10px;
+}
 
 .flex-container > div{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items:center;
 }
@@ -12,7 +16,7 @@
     color: var(--yellow);
     background: var(--darkGray);
     margin: 7px 0px;
-    padding: 5px 15px;
+    padding: 10px 15px;
     font-size: 15px;
     display: block;
     border: none;
@@ -33,6 +37,8 @@
     display: none;
     font-size: 14px;
     margin: 0px 2px;
+    width: 100%;
+    max-width: 700px;
 }
 .item{
     padding: 5px 15px;
@@ -45,7 +51,7 @@
     color: var(--orange);
     max-width: 320px;
 }
-strong{
+.name strong{
     color: var(--white);
 }
 .price{

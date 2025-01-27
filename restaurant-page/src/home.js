@@ -3,6 +3,7 @@ import momos from './img/momos.png'
 import pizza from './img/pizza.png'
 import pizza2 from './img/pizza2.png'
 
+const homeBtn = document.querySelector('.homeBtn')
 const body = document.querySelector('body')
 const homeContainer = document.createElement('div');
 homeContainer.setAttribute('id', 'home-container');
@@ -44,9 +45,11 @@ body.appendChild(homeContainer);
 
 const hideHomeContainer = function(){
     homeContainer.style.display ='none';
+    homeBtn.classList.remove('active')
 }   
 const showHomeContainer = function(){
     homeContainer.style.display ='block';
+    homeBtn.classList.add('active')
 }   
 
 export {

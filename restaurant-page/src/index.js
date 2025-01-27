@@ -1,22 +1,29 @@
 import './style.css'
 import './homeStyle.css'
 import './menuStyle.css'
+import './contactStyle.css'
 import { hideHomeContainer, showHomeContainer } from './home'
-import { menuToggleFunction, showMenuContainer, hideMenuContainer } from './menu'
+import { showMenuContainer, hideMenuContainer } from './menu'
+import { hideContactContainer, showContactContainer} from './contact'
 const homeBtn = document.querySelector('.homeBtn')
 const menuBtn = document.querySelector('.menuBtn')
-const aboutBtn = document.querySelector('.aboutBtn')
+const contactBtn = document.querySelector('.contactBtn')
+
+
 
 homeBtn.addEventListener('click', ()=>{
     showHomeContainer();
     hideMenuContainer();
+    hideContactContainer();
 })
 menuBtn.addEventListener('click', ()=>{
     hideHomeContainer();
     showMenuContainer();
+    hideContactContainer();
 })
-aboutBtn.addEventListener('click', ()=>{
+contactBtn.addEventListener('click', ()=>{
     hideHomeContainer();
     hideMenuContainer();
+    showContactContainer();
 })
-menuToggleFunction();
+// showHomeContainer();

@@ -1,4 +1,5 @@
 const body = document.querySelector('body')
+const menuBtn = document.querySelector('.menuBtn')
 
 const menuContainer = document.createElement('div')
 const flexContainer = document.createElement('div')
@@ -494,45 +495,45 @@ for(let s of menu){     //sections loop
 
     flexContainer.appendChild(section)
 }
-console.log(menuContainer);
+
 menuContainer.appendChild(flexContainer)
 body.appendChild(menuContainer)
 menuContainer.style.display = 'none'
 
 const showMenuContainer = () => {
     menuContainer.style.display = 'block'
+    menuBtn.classList.add('active')
 }
 const hideMenuContainer = () => {
     menuContainer.style.display = 'none'
+    menuBtn.classList.remove('active')
 }
 
 // ----toggle-menu-----
 const dropdown = document.querySelectorAll(".dropdown-btn");
-const menuToggleFunction = function (){
-    dropdown.forEach((i) => {
-        i.addEventListener("click", function (e) {
-            i.classList.toggle("active");
-            const dropdownContent = i.nextElementSibling;
-            let box;
-                if(e.target.classList[0] === 'fa-solid'){
-                    box = e.target.parentElement;
-                }else{
-                    box  = e.target;
-                }
-                
-                if(dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                    box.innerHTML = `${box.id} <i class="fa-solid fa-chevron-down"></i>`
-                } else{
-                    dropdownContent.style.display = "block";
-                    box.innerHTML = `${box.id} <i class="fa-solid fa-chevron-up"></i>`
-                }
-        });
-    })
-}
+dropdown.forEach((i) => {
+    i.addEventListener("click", function (e) {
+        i.classList.toggle("active");
+        const dropdownContent = i.nextElementSibling;
+        let box;
+            if(e.target.classList[0] === 'fa-solid'){
+                box = e.target.parentElement;
+            }else{
+                box  = e.target;
+            }
+            
+            if(dropdownContent.style.display === "block") {
+                dropdownContent.style.display = "none";
+                box.innerHTML = `${box.id} <i class="fa-solid fa-chevron-down"></i>`
+            } else{
+                dropdownContent.style.display = "block";
+                box.innerHTML = `${box.id} <i class="fa-solid fa-chevron-up"></i>`
+            }
+    });
+})
+
 
 export {
-    menuToggleFunction,
     showMenuContainer,
     hideMenuContainer
 }
