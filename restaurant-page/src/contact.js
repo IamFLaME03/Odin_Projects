@@ -64,7 +64,7 @@ for(let c of card){
 }
 innerDiv.appendChild(linkCards)
 body.appendChild(contactContainer)
-
+contactContainer.style.display = 'none'
 
 const hideContactContainer = function(){
     contactContainer.style.display ='none'
