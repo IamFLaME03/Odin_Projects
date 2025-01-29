@@ -34,3 +34,4 @@ A dynamic library application to manage and organize books, featuring JavaScript
 An interactive and responsive implementation of the classic Tic Tac Toe game, developed with modular JavaScript, HTML, and CSS.
 
 ## 10. [Restaurant-page](https://iamflame03.github.io/Odin_Projects/)
+A responsive and dynamic restaurant webpage built with HTML, CSS, and JavaScript. This project utilizes npm and Webpack for modular development and efficient bundling.
