@@ -35,3 +35,6 @@ An interactive and responsive implementation of the classic Tic Tac Toe game, de
 
 ## 10. [Restaurant-page](https://iamflame03.github.io/restaurant-site/)
 A responsive and dynamic restaurant webpage built with HTML, CSS, and JavaScript. This project utilizes npm and Webpack for modular development and efficient bundling.
+
+## 11. [Weather App 🌦️](https://iamflame03.github.io/Weather-App/)
+A real-time weather application fetching live data using the OpenWeather API.
